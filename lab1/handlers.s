@@ -7,11 +7,12 @@
         AREA    |.text|, CODE, READONLY, ALIGN=2
 
         EXPORT GPIOPortJ_Handler
+		IMPORT SysTick_Wait1ms
 
 GPIOPortJ_Handler
         PUSH    {LR, R2}
-        ;MOV     R0, #5                           ; Move 80ms de espera para problema do bounce
-        ;BL      wait1ms_addcount
+        ;MOV     R0, #100                        ; Move 80ms de espera para problema do bounce
+        ;BL      SysTick_Wait1ms
 
         LDR     R0, =GPIO_REGJ + GPIO_MIS_R     ; Carrega o endereço do MIS
         LDR     R2, [R0]                        ; Carrega o conteúdo do MIS
