@@ -7,6 +7,8 @@
 ; Editado por Guilherme Peron
 ; 15/03/2018
 ; 26/08/2020
+; Editado por Bruno
+; 13/05/2025
 ; Copyright 2014 by Jonathan W. Valvano, valvano@mail.utexas.edu
 
 ; -------------------------------------------------------------------------------------------------------------------------
@@ -297,7 +299,14 @@ SysTick_Wait1ms_done
 	POP {R4, PC}                        ;return
 
 
-DELAY1US EQU 80;
+;------------SysTick_Wait1us------------
+; tempo de atraso usando processador ocupado. Assume um clock de 80 MHz
+; Entrada: R0 --> Número de vezes para contar 1us.
+; Saída: Não tem
+; Modifica: R0
+
+DELAY1US EQU 80; ; número de ciclos de clock para contar 1ms (assumindo 80 MHz)
+	              ; 80 x 12,5 ns = 1 us
 
 SysTick_Wait1us
 	PUSH {R4, LR} 						; salva o valor atual de R4 e Link Register
