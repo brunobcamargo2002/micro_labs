@@ -21,7 +21,7 @@ LCD_Init
 		LDR R0, =LCD_CURINC            ;autoincremento cursor
 		BL instruction_delay50u
 		
-		LDR R0, =LCD_CURON            ;cursor
+		LDR R0, =LCD_INITCONFIG            ;autoincremento cursor
 		BL instruction_delay50u
 		
 		LDR R0, =LCD_CLEAR            ;clear
