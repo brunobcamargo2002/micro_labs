@@ -27,9 +27,9 @@ increase
         SUB     R5, R8, R2                   ; Calcula valor_estourado - (valor_maximo + 1)
         MOV     R8, R3                       ; Move o valor mínimo do contador em R8
         ADD     R8, R5                       ; Adiciona o deslocamento
-        POP     {R2}
-
+		
 end_increase
+		POP     {R2}
         BX      LR
 ; -------------------------------------------------------------------------------
 ; Função responsável por decrementar o contador de acordo com o passo
@@ -44,9 +44,9 @@ decrease
         SUB     R5, R8, R2                   ; Calcula valor_estourado - (valor_minimo - 1)
         MOV     R8, R4                       ; Move o valor máximo do contador em R8
         ADD     R8, R5                       ; Adiciona o deslocamento (valor negativo)
-        POP     {R2}
-
+        
 end_decrease
+		POP     {R2}
         BX      LR
 ; -------------------------------------------------------------------------------
 ; Função responsável por incrementar o tempo nos cantadores de refresh do display e do update da lógica.
